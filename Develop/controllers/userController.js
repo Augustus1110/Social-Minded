@@ -48,7 +48,7 @@ module.exports = {
       );
 
       if (!user) {
-        return res.status(404).json({ message: 'No user with this id!' });
+        return res.status(404).json({ message: 'No user with that ID' });
       }
 
       res.json(user);
@@ -67,6 +67,40 @@ module.exports = {
 
       res.json(user);
     } catch (err) {
+      res.status(500).json(err);
+    }
+  },
+  // Add a friend
+  async addFriend(req, res) {
+    try {
+      const dbUserData = await User.findOneAndUpdate({ _id: req.params.userId }, 
+        { $push: { friends: req.params.friendId } }, 
+        { new: true });
+
+      if (!dbUserData) {
+        return res.status(404).json({ message: 'No user with that ID' });
+      }
+
+      res.json(dbUserData);
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  },
+  // Delete a friend
+  async deleteFriend(req, res) {
+    try {
+      const dbUserData = await User.findOneAndUpdate({ _id: req.params.userId }, 
+        { $pull: { friends: req.params.friendId } }, 
+        { new: true });
+
+      if (!dbUserData) {
+        return res.status(404).json({ message: 'No user with that ID' });
+      }
+
+      res.json(dbUserData);
+    } catch (err) {
+      console.log(err);
       res.status(500).json(err);
     }
   },
