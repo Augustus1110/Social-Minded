@@ -8,7 +8,7 @@ const thoughtSchema = new Schema(
       type: String,
       required: true,
       min_length: 1,
-      max_length: 280,
+      max_length: 280
     },
     createdAt: {
       type: Date,
