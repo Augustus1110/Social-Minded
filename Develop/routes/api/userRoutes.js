@@ -14,7 +14,7 @@ router.route('/').get(getUsers).post(createUser);
 
 // /api/users/:userId
 router
-  // Line 16 is setting the req params id
+  // Setting the req params id
   .route('/:userId')
   .get(getSingleUser)
   .put(updateUser)
