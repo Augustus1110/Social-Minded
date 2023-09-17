@@ -65,6 +65,7 @@ const addDateSuffix = (date) => {
   // Adds "am" or "pm" suffix
   const periodOfDay = dateObj.getHours() >= 12 ? 'pm' : 'am';
 
+  // Builds the formatted timestamp string.
   const formattedTimeStamp = `${formattedMonth} ${dayOfMonth}, ${year} at ${hour}:${minutes} ${periodOfDay}`;
 
   return formattedTimeStamp;
