@@ -1,3 +1,5 @@
+// Function for date formatting
+
 const addDateSuffix = (date) => {
     let dateStr = date.toString();
   
@@ -20,7 +22,8 @@ const addDateSuffix = (date) => {
     timestamp,
     { monthLength = 'short', dateSuffix = true } = {}
   ) => {
-    // Creates the month object.
+    // Creates the month object and mapping of month names based on desired string length.
+    // Uses conditional operator (?) to check if month length is equal to 'short'. If yes, returns the abbr. month name, otherwise full name. 
     const months = {
       0: monthLength === 'short' ? 'Jan' : 'January',
       1: monthLength === 'short' ? 'Feb' : 'February',
@@ -35,27 +38,31 @@ const addDateSuffix = (date) => {
       10: monthLength === 'short' ? 'Nov' : 'November',
       11: monthLength === 'short' ? 'Dec' : 'December',
     };
-  
+
+    // Creates a date object from the timestamp.
     const dateObj = new Date(timestamp);
+    // Gets the month name based on the month value returned by the getMonth() method.
     const formattedMonth = months[dateObj.getMonth()];
-  
+    // Gets the day of the month, adding a suffix to it if dateSuffix parameter is set to true.
     const dayOfMonth = dateSuffix
       ? addDateSuffix(dateObj.getDate())
       : dateObj.getDate();
+      // Gets the full year.
       const year = dateObj.getFullYear();
+  // Gets hours value (from 0 to 23).    
   let hour =
     dateObj.getHours() > 12
       ? Math.floor(dateObj.getHours() - 12)
       : dateObj.getHours();
 
-  // If hour is 0 (12:00am), change it to read 12.
+  // If hour is 0 (i.e. 12:00am), change it to read 12.
   if (hour === 0) {
     hour = 12;
   }
-
+  // Formats minutes, adds leading 0 if needed.
   const minutes = (dateObj.getMinutes() < 10 ? '0' : '') + dateObj.getMinutes();
 
-  // Sets "am" or "pm"
+  // Adds "am" or "pm" suffix
   const periodOfDay = dateObj.getHours() >= 12 ? 'pm' : 'am';
 
   const formattedTimeStamp = `${formattedMonth} ${dayOfMonth}, ${year} at ${hour}:${minutes} ${periodOfDay}`;
