@@ -36,14 +36,13 @@ To use the Social Minded app, follow these steps:
     3. Open Insomnia Core or Postman and test the application's API routes.
 
 ### Images
-![Screenshot](./db/images/Prompts.png)
-![Screenshot](./db/images/Tables.png)
+![Screenshot](./utils/images/Insomnia.png)
 
 ### Contributing
 This project is not accepting contributions at this time.
 
 ### Collaborators
-This project was completed with guidance and assistance from EdX/UC Berkeley Extension tutor Robby Kurle.
+This project was completed with guidance and assistance from EdX/UC Berkeley Extension tutor Robby Kurle. The date formatting function in dateFormat.js was sourced from EdX/UC Berkeley Extension course materials.
 
 ### Questions
 If you have any questions, please contact me:

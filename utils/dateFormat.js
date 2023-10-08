@@ -1,4 +1,5 @@
 // Function for date formatting
+// The code for this function was provided by my EdX tutor and is sourced from Edx course materials.
 
 const addDateSuffix = (date) => {
     let dateStr = date.toString();
