@@ -11,6 +11,7 @@
 6. [Collaborators](#collaborators)
 7. [Questions](#questions)
 8. [License](#license)
+9. [Walkthrough Video](#walkthrough-video)
 
 ### Description
 The Social Minded app is a social media application that allows users to create an account, post thoughts, and react to other users' thoughts. Users can also add friends to their friend list and remove friends from their friend list. The Social Minded app uses Express.js for routing, a MongoDB database, and the Mongoose ODM.
@@ -54,5 +55,5 @@ If you have any questions, please contact me:
 MIT
 (https://opensource.org/licenses/MIT)
 
-### Video Walkthrough
+### Walkthrough Video
 (https://drive.google.com/file/d/1j1CMv-B35NBILn0j3B_4hUtdxQT7-aB-/view)
